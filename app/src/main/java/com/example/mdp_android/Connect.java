@@ -1,9 +1,8 @@
-package com.example.mdp_android.main;
+package com.example.mdp_android;
 
-
-import static java.security.AccessController.getContext;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
@@ -38,7 +37,7 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.UUID;
-import com.example.mdp_android.R;
+
 public class Connect extends AppCompatActivity {
 
     private static final String TAG = "Connect";
@@ -142,6 +141,7 @@ public class Connect extends AppCompatActivity {
         //ONCLICK LISTENER FOR PAIRED DEVICE LIST
         lvPairedDevices.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
+                    @SuppressLint("MissingPermission")
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
@@ -163,6 +163,7 @@ public class Connect extends AppCompatActivity {
         //ONCLICK LISTENER FOR SEARCH DEVICE LIST
         lvNewDevices.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
+                    @SuppressLint("MissingPermission")
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
@@ -212,6 +213,7 @@ public class Connect extends AppCompatActivity {
 
         //ONCLICKLISTENER FOR CONNECT BUTTON
         bluetoothConnect.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint({"MissingPermission", "WrongConstant"})
             public void onClick(View view) {
 
                 if (myBTDevice == null) {
@@ -273,6 +275,7 @@ public class Connect extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @SuppressLint("MissingSuperCall")
     @Override
     public void onBackPressed() {
         Intent intent = new Intent(Connect.this, MainActivity.class);
@@ -301,6 +304,7 @@ public class Connect extends AppCompatActivity {
 
     //BROADCAST RECEIVER FOR BLUETOOTH CONNECTION STATUS
     BroadcastReceiver btConnectionReceiver = new BroadcastReceiver() {
+        @SuppressLint("MissingPermission")
         @Override
         public void onReceive(Context context, Intent intent) {
 
@@ -490,6 +494,7 @@ public class Connect extends AppCompatActivity {
       Create a BroadcastReceiver for ACTION_FOUND (Get Discovered Devices Info).
   */
     private final BroadcastReceiver discoveryBroadcastReceiver = new BroadcastReceiver() {
+        @SuppressLint("MissingPermission")
         public void onReceive(Context context, Intent intent) {
             final String action = intent.getAction();
             Log.d(TAG, "SEARCH ME!");
@@ -547,6 +552,7 @@ public class Connect extends AppCompatActivity {
         Create a BroadcastReceiver for ACTION_FOUND (Pairing Devices).
     */
     private final BroadcastReceiver bondingBroadcastReceiver = new BroadcastReceiver() {
+        @SuppressLint("MissingPermission")
         public void onReceive(Context context, Intent intent) {
             final String action = intent.getAction();
 
@@ -623,6 +629,7 @@ public class Connect extends AppCompatActivity {
     /*
         TURN DISCOVERABILITY ON
     */
+    @SuppressLint("MissingPermission")
     private void discoverabilityON() {
 
         Intent discoverableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
@@ -634,6 +641,7 @@ public class Connect extends AppCompatActivity {
 
 
     //ENABLE DISABLE BLUETOOTH
+    @SuppressLint("MissingPermission")
     public void enableBT() {
         //DEVICE DOES NOT HAVE BLUETOOTH
         if (myBluetoothAdapter == null) {
@@ -683,6 +691,7 @@ public class Connect extends AppCompatActivity {
     /*
       START DISCOVERING OTHER DEVICES
   */
+    @SuppressLint("MissingPermission")
     private void startSearch() {
         Log.d(TAG, "btnDiscover: Looking for unpaired devices.");
 
@@ -715,6 +724,7 @@ public class Connect extends AppCompatActivity {
     /*
         START BLUETOOTH CHAT SERVICE METHOD
     */
+    @SuppressLint("MissingPermission")
     public void startBTConnection(BluetoothDevice device, UUID uuid, Context context) {
 
 
@@ -742,10 +752,11 @@ public class Connect extends AppCompatActivity {
     }
 
 
+    @SuppressLint("MissingPermission")
     public void checkPairedDevice() {
 
         //CHECK IF THERE IS PAIRED DEVICES
-        Set<BluetoothDevice> pairedDevices = myBluetoothAdapter.getBondedDevices();
+        @SuppressLint("MissingPermission") Set<BluetoothDevice> pairedDevices = myBluetoothAdapter.getBondedDevices();
         myBTPairedDevicesArrayList.clear();
 
         if (pairedDevices.size() > 0) {

@@ -1,4 +1,4 @@
-package com.example.mdp_android.main;
+package com.example.mdp_android;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;

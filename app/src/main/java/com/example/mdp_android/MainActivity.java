@@ -6,16 +6,13 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 
+import com.example.mdp_android.databinding.ActivityMainBinding;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
-import com.example.mdp_android.databinding.ActivityMainBinding;
-import com.example.mdp_android.main.Connect;
-import com.example.mdp_android.main.MapFragment;
-import com.example.mdp_android.main.SettingsFragment;
 
 public class MainActivity extends AppCompatActivity {
 

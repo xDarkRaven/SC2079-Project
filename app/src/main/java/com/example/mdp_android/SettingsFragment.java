@@ -1,6 +1,7 @@
-package com.example.mdp_android.main;
+package com.example.mdp_android;
 
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
@@ -29,8 +30,6 @@ import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
-
-import com.example.mdp_android.R;
 
 import java.nio.charset.Charset;
 import java.util.UUID;
@@ -620,6 +619,7 @@ public class SettingsFragment extends AppCompatActivity implements SensorEventLi
 
     //BROADCAST RECEIVER FOR BLUETOOTH CONNECTION STATUS
     BroadcastReceiver btConnectionReceiver = new BroadcastReceiver() {
+        @SuppressLint("MissingPermission")
         @Override
         public void onReceive(Context context, Intent intent) {
 

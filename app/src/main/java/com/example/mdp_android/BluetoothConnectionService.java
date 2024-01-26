@@ -1,7 +1,8 @@
-package com.example.mdp_android.main;
+package com.example.mdp_android;
 
 
 
+import android.annotation.SuppressLint;
 import android.app.IntentService;
 import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
@@ -101,6 +102,7 @@ public class BluetoothConnectionService extends IntentService {
         //Local server socket
         private final BluetoothServerSocket myServerSocket;
 
+        @SuppressLint("MissingPermission")
         public AcceptThread() {
             BluetoothServerSocket temp = null;
 
@@ -185,6 +187,7 @@ public class BluetoothConnectionService extends IntentService {
             deviceUUID = uuid;
         }
 
+        @SuppressLint("MissingPermission")
         public void run() {
             BluetoothSocket temp = null;
             Intent connectionStatusIntent;
@@ -192,7 +195,7 @@ public class BluetoothConnectionService extends IntentService {
             Log.d(TAG, "Run: myConnectThread");
 
             // Try to use the device's advertised UUIDs first
-            ParcelUuid[] uuids = myDevice.getUuids();
+            @SuppressLint("MissingPermission") ParcelUuid[] uuids = myDevice.getUuids();
             if (uuids != null) {
                 for (ParcelUuid uuid : uuids) {
                     try {

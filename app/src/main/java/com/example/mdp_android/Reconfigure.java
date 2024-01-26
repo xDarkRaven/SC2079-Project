@@ -1,4 +1,4 @@
-package com.example.mdp_android.main;
+package com.example.mdp_android;
 
 import android.app.AlertDialog;
 import android.bluetooth.BluetoothDevice;
@@ -18,8 +18,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.mdp_android.R;
 
 import java.nio.charset.Charset;
 import java.util.UUID;

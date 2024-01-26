@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.mdp_android.main.SettingsFragment"
+    tools:context="com.example.mdp_android.SettingsFragment"
     android:background="@drawable/simple">
 
     <!--TextView
@@ -202,7 +202,7 @@
 
     <view
         android:id="@+id/mapView"
-        class="com.example.mdp_android.main.MazeView"
+        class="com.example.mdp_android.MazeView"
         android:layout_width="555dp"
         android:layout_height="583dp"
         android:layout_marginBottom="8dp"

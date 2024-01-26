@@ -1,4 +1,4 @@
-package com.example.mdp_android.main;
+package com.example.mdp_android;
 
 
 import android.os.Bundle;
@@ -11,7 +11,6 @@ import android.widget.EditText;
 import androidx.fragment.app.DialogFragment;
 
 import org.json.JSONException;
-import com.example.mdp_android.R;
 
 
 public class ObstacleDialogFragment extends DialogFragment {

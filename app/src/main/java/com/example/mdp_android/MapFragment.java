@@ -1,10 +1,9 @@
-package com.example.mdp_android.main;
+package com.example.mdp_android;
 
 
 import android.app.AlertDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
-import android.bluetooth.BluetoothSocket;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -43,14 +42,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
-import com.example.mdp_android.R;
-
-import com.example.mdp_android.main.BluetoothConnectionService;
 
 /**
  * A simple {@link Fragment} subclass.

@@ -1,4 +1,4 @@
-package com.example.mdp_android.main;
+package com.example.mdp_android;
 
 import android.content.Context;
 import android.graphics.Canvas;
